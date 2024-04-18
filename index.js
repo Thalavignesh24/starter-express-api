@@ -16,7 +16,8 @@ app.get("/vpn-detect",(req,res)=>{
                          if (interfaceDetail.netmask === '255.255.255.255') {
                              console.log(true);
                              return res.send({
-                               message:interfaces
+                               message:"VPN Detected",
+                               response:interfaces
                              });
                          }
                      }
@@ -25,7 +26,8 @@ app.get("/vpn-detect",(req,res)=>{
          }
          console.log(false);
          return res.send({
-           message:interfaces
+           message:"VPN Not Detected",
+           response: interfaces
          })
 });
 
